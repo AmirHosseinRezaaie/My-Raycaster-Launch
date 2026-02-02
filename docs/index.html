@@ -4,10 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="RayCaster Pro - A high-performance retro 3D engine built from scratch in pure C">
+    <meta name="keywords" content="raycasting, C programming, game engine, 3D graphics, retro gaming">
+    <meta name="author" content="AmirHosseinRezaaie">
+
+    <title>RayCaster Pro - Retro 3D Engine</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
 </head>
 
 <body>
+    <span id="top"></span>
+
     <header class="site-header">
         <input type="checkbox" id="menu-toggle" class="menu-toggle">
         <div class="container">
@@ -42,9 +52,153 @@
             </ul>
         </nav>
     </header>
-    <main>
 
-    </main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>🎮 RayCaster Pro</h1>
+        <p class="slogan">Experience nostalgia with modern performance - 60 FPS of pure retro magic!</p>
+        <a href="https://github.com/AmirHosseinRezaaie/My-Raycaster-Launch" class="cta-button" target="_blank">
+            🔥 Download Source
+        </a>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h2 class="section-title">✨ Key Features</h2>
+
+        <div class="feature-grid">
+            <!-- Feature Card 1 -->
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>High-Performance DDA Algorithm</h3>
+                <p>
+                    Utilizes the Digital Differential Analysis (DDA) algorithm for ultra-fast ray-grid intersection calculations. Each frame casts hundreds of rays with microsecond precision, ensuring smooth 60 FPS gameplay even on modest hardware.
+                </p>
+            </div>
+
+            <!-- Feature Card 2 -->
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Runs at Blazing 60 FPS</h3>
+                <p>
+                    Optimized rendering pipeline with frame-rate independent movement ensures buttery-smooth gameplay. Advanced distance-based culling and efficient memory management deliver consistent performance across all platforms.
+                </p>
+            </div>
+
+            <!-- Feature Card 3 -->
+            <div class="feature-card">
+                <div class="feature-icon">🗺️</div>
+                <h3>Real-Time Map Editor</h3>
+                <p>
+                    Toggle between 3D gameplay and 2D map editing with a single keypress! Create custom levels on-the-fly, save them to disk, and share with friends. Features intuitive mouse-based wall placement and removal with instant visual feedback.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Stack Table -->
+    <section class="features">
+        <h2 class="section-title">🛠️ Technology Stack</h2>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Technology</th>
+                        <th>Purpose</th>
+                        <th>Version</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Language</td>
+                        <td>Pure C</td>
+                        <td>Core engine logic</td>
+                        <td>C99</td>
+                    </tr>
+                    <tr>
+                        <td>Graphics</td>
+                        <td>Raylib</td>
+                        <td>Window & rendering</td>
+                        <td>4.5+</td>
+                    </tr>
+                    <tr>
+                        <td>Build System</td>
+                        <td>Make</td>
+                        <td>Compilation automation</td>
+                        <td>GNU Make 4.3</td>
+                    </tr>
+                    <tr>
+                        <td>Version Control</td>
+                        <td>Git</td>
+                        <td>Source code management</td>
+                        <td>2.40+</td>
+                    </tr>
+                    <tr>
+                        <td>Platform</td>
+                        <td>Cross-platform</td>
+                        <td>Linux & Windows support</td>
+                        <td>Multi-platform</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Quick Start Guide -->
+    <section class="features">
+        <h2 class="section-title">🚀 Quick Start</h2>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon">1️⃣</div>
+                <h3>Clone Repository</h3>
+                <p>
+                    <code>git clone https://github.com/AmirHosseinRezaaie/My-Raycaster-Launch.git</code>
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">2️⃣</div>
+                <h3>Install Dependencies</h3>
+                <p>
+                    <code>sudo apt install build-essential libraylib-dev</code>
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">3️⃣</div>
+                <h3>Build & Run</h3>
+                <p>
+                    <code>make && ./raycaster</code>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="features">
+        <h2 class="section-title">📊 Project Stats</h2>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3 style="font-size: 3rem; margin: 0; color: var(--accent-color);">1000+</h3>
+                <p>Lines of Code</p>
+            </div>
+
+            <div class="feature-card">
+                <h3 style="font-size: 3rem; margin: 0; color: var(--primary-color);">60</h3>
+                <p>Frames Per Second</p>
+            </div>
+
+            <div class="feature-card">
+                <h3 style="font-size: 3rem; margin: 0; color: var(--secondary-color);">100%</h3>
+                <p>Pure C Code</p>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <p><strong>Developer:</strong> AmirHossein Rezaaie | <strong>Student ID:</strong> 403541474</p>
         <p>© 2026 RayCaster Pro | Licensed under <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a></p>
@@ -69,6 +223,10 @@
             </div>
         </div>
     </footer>
+
+    <!-- Scroll to Top Button (Pure CSS - No JavaScript) -->
+    <a href="#top" class="scroll-to-top"></a>
+
 </body>
 
 </html>
