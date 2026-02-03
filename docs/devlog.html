@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Development log and technical insights for RayCaster Pro">
+    <meta name="author" content="AmirHosseinRezaaie">
+
+    <title>DevLog - RayCaster Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📝</text></svg>">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <div class="container">
+            <label for="menu-toggle" class="hamburger">
+                <svg viewBox="0 0 100 100" width="40" height="40">
+                    <line x1="20" y1="30" x2="80" y2="30" stroke="#00ff9f" stroke-width="8" stroke-linecap="round" class="line1"/>
+                    <line x1="20" y1="50" x2="80" y2="50" stroke="#00ff9f" stroke-width="8" stroke-linecap="round" class="line2"/>
+                    <line x1="20" y1="70" x2="80" y2="70" stroke="#00ff9f" stroke-width="8" stroke-linecap="round" class="line3"/>
+                </svg>
+            </label>
+
+            <h4 class="intro_words">Welcome to</h4>
+            <h1 class="site-logo">Developer Log</h1>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home<svg class="nav-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" fill="currentColor"/></svg></a></li>
+                    <li><a href="devlog.html" class="active">DevLog<svg class="nav-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="currentColor"/></svg></a></li>
+                    <li><a href="gallery.html">Gallery<svg class="nav-icon" viewBox="0 0 24 24" width="18" height="18"><rect x="3" y="6" width="12" height="12" rx="1" fill="currentColor" opacity="1"/></svg></a></li>
+                    <li><a href="https://github.com/AmirHosseinRezaaie/My-Raycaster-Launch" target="_blank">GitHub<svg class="nav-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1 .9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/></svg></a></li>
+                </ul>
+            </nav>
+        </div>
+        <nav class="mobile-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="devlog.html" class="active">DevLog</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="https://github.com/AmirHosseinRezaaie/My-Raycaster-Launch" target="_blank">GitHub</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 50vh;">
+        <h1>📝 Developer Log</h1>
+        <p class="slogan">Behind the scenes: Technical insights and development challenges</p>
+    </section>
+
+    <!-- DevLog Content -->
+    <section class="devlog">
+
+        <article>
+            <h3> Understanding the Raycasting Algorithm</h3>
+            <p>
+                At its core, raycasting creates the illusion of 3D from a 2D grid map. The fundamental principle is elegant: for every vertical column of pixels on screen, we cast a single ray from the player's position into the game world.
+            </p>
+            <p>
+                The engine uses the DDA (Digital Differential Analysis) algorithm to trace each ray through the grid. Starting from the player's coordinates, we step through grid cells checking for wall hits. The genius lies in stepping along whichever axis (X or Y)
+                would reach the next grid line first - ensuring we never miss a wall intersection.
+            </p>
+            <p>
+                Once a wall is detected, we calculate the perpendicular distance from the player. This is crucial - using direct distance would cause the "fisheye effect" where walls appear curved. By projecting the distance onto the player's viewing direction, we achieve
+                proper perspective.
+            </p>
+            <p>
+                The final magic: we draw a vertical line whose height is inversely proportional to the distance. Closer walls appear taller, distant walls shorter - and our brain interprets this as 3D depth! Distance-based shading enhances the effect, making distant
+                walls darker to simulate atmospheric perspective.
+            </p>
+            <div style="background: var(--darker-bg); padding: 1.5rem; border-radius: 10px; margin: 1.5rem 0; border: 2px solid var(--border-glow);">
+                <code style="display: block; white-space: pre; color: var(--accent-color); line-height: 1.8;">
+for (each screen column x) {
+    // Calculate ray direction
+    ray_dir = player_dir + camera_plane * x_offset
+    
+    // DDA algorithm: step through grid
+    while (no wall hit) {
+        step to next grid line
+        check for wall collision
+    }
+    
+    // Calculate perpendicular distance
+    perp_dist = calculate_perpendicular_distance()
+    
+    // Draw wall slice
+    wall_height = SCREEN_HEIGHT / perp_dist
+    draw_vertical_line(x, wall_height, shading)
+}
+                </code>
+            </div>
+            <p>
+                This technique powered classics like Wolfenstein 3D (1992) and DOOM. It's a testament to how clever algorithms achieve impressive results with limited hardware!
+            </p>
+        </article>
+
+        <article>
+            <h3>The Fisheye Effect Nightmare</h3>
+            <p>
+                Every raycasting developer faces this classic challenge: the fisheye distortion. When I first ran my engine, walls appeared curved like looking through a fisheye lens. The effect was most pronounced at sharp viewing angles.
+            </p>
+            <p>
+                The root cause was subtle but fundamental: I was calculating Euclidean distance from the player to each wall hit point. While mathematically correct, this creates distortion because rays at screen edges travel further than center rays - even when viewing
+                a flat wall straight-on.
+            </p>
+            <p>
+                The solution required understanding perpendicular distance projection. Instead of using direct ray distance, we project it onto the player's viewing direction:
+            </p>
+            <div style="background: var(--darker-bg); padding: 1.5rem; border-radius: 10px; margin: 1.5rem 0; border: 2px solid var(--border-glow);">
+                <code style="display: block; color: var(--accent-color); line-height: 1.8;">
+// CORRECT: Perpendicular distance
+if (side == VERTICAL_WALL)
+    perp_dist = (map_x - player_x + (1 - step_x) / 2) / ray_dir_x
+else
+    perp_dist = (map_y - player_y + (1 - step_y) / 2) / ray_dir_y
+                </code>
+            </div>
+            <p>
+                This calculates how far the ray traveled along its direction before hitting the wall, effectively "flattening" the measurement plane perpendicular to the viewing direction. Debugging this took hours with paper diagrams!
+            </p>
+            <p>
+                This bug taught me: mathematical correctness doesn't always equal visual correctness. Sometimes you need to "cheat" the math to match human perception.
+            </p>
+        </article>
+
+    </section>
+
+    <footer>
+        <p><strong>Developer:</strong> AmirHossein Rezaaie | <strong>Student ID:</strong> 403541474</p>
+        <p>© 2026 RayCaster Pro | Licensed under <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a></p>
+        <p>Built for Computer Workshop Course - Iran University of Science and Technology</p>
+        <div class="container">
+            <p>Contact us:</p>
+            <div class="social-links">
+                <a href="https://t.me/amirhossein122333" target="_blank" class="telegram">
+                    <img src="images/Telegram-Logo.png" alt="telegram">
+                </a>
+                <a href="https://wa.me/qr/DXZSKFSOLGCMH1" target="_blank" class="whatsapp">
+                    <img src="images/Whats-App-Logo.png" alt="whatsapp">
+                </a>
+                <a href="https://eitaa.com/amirhossein122333" target="_blank" class="eitaa">
+                    <img src="images/Eitaa-Logo.png" alt="eitaa">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
