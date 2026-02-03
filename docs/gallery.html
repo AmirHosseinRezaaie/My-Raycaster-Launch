@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Screenshot gallery of RayCaster Pro in action">
+    <meta name="author" content="AmirHosseinRezaaie">
+
+    <title>Gallery - RayCaster Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖼️</text></svg>">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <div class="container">
+
+            <label for="menu-toggle" class="hamburger">
+                <svg viewBox="0 0 100 100" width="40" height="40">
+                    <line x1="20" y1="30" x2="80" y2="30" stroke="#00ff9f" stroke-width="8" stroke-linecap="round" class="line1"/>
+                    <line x1="20" y1="50" x2="80" y2="50" stroke="#00ff9f" stroke-width="8" stroke-linecap="round" class="line2"/>
+                    <line x1="20" y1="70" x2="80" y2="70" stroke="#00ff9f" stroke-width="8" stroke-linecap="round" class="line3"/>
+                </svg>
+            </label>
+
+            <h4 class="intro_words">Welcome to</h4>
+            <h1 class="site-logo">Raycaster Gallery</h1>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home<svg class="nav-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" fill="currentColor"/></svg></a></li>
+                    <li><a href="devlog.html">DevLog<svg class="nav-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="currentColor"/></svg></a></li>
+                    <li><a href="gallery.html" class="active">Gallery<svg class="nav-icon" viewBox="0 0 24 24" width="18" height="18"><rect x="3" y="6" width="12" height="12" rx="1" fill="currentColor" opacity="1"/></svg></a></li>
+                    <li><a href="https://github.com/AmirHosseinRezaaie/My-Raycaster-Launch" target="_blank">GitHub<svg class="nav-icon" viewBox="0 0 24 24" width="18" height="18"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1 .9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/></svg></a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <nav class="mobile-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="devlog.html">DevLog</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="https://github.com/AmirHosseinRezaaie/My-Raycaster-Launch" target="_blank">GitHub</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 50vh;">
+        <h1>🖼️ Gallery</h1>
+        <p class="slogan">See RayCaster Pro in action - retro 3D rendering at its finest</p>
+    </section>
+
+    <!-- Gallery Content -->
+    <section class="gallery">
+        <div class="gallery-container">
+
+            <div class="gallery-item">
+                <img src="https://lodev.org/cgtutor/images/wolf3d.jpg" alt="Classic raycasting 3D view">
+                <div class="gallery-overlay">
+                    <h3>First-Person 3D View</h3>
+                    <p>Classic Wolfenstein-style perspective with distance shading</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://lodev.org/cgtutor/images/wolfmapedit.jpg" alt="2D map editor">
+                <div class="gallery-overlay">
+                    <h3>Map Editor Mode</h3>
+                    <p>Real-time level editing with mouse-based wall placement</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://external-preview.redd.it/a-simple-raycaster-game-in-c-v0-d203NTY2dmtkeXJkMc4sujC9o6lKEqUwo_oVKZgMqQg7Ng9cY-8DCqcAT07p.png?format=pjpg&auto=webp&s=43b349a9f35cb9117c9f28826edb6ff7079d1248" alt="Raycaster in C">
+                <div class="gallery-overlay">
+                    <h3>Pure C Implementation</h3>
+                    <p>Optimized rendering pipeline built from scratch</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://preview.redd.it/oze1fzu02oe61.gif?width=637&auto=webp&s=99e31bd1b7f8f2cc3a41fa7877e77d1878a46a96" alt="Animated raycasting">
+                <div class="gallery-overlay">
+                    <h3>60 FPS Performance</h3>
+                    <p>Smooth rendering with frame-rate independent movement</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://austinhenley.com/blog/images/raycastingdemo.png" alt="Split view">
+                <div class="gallery-overlay">
+                    <h3>Debug View</h3>
+                    <p>Simultaneous 2D map and 3D rendering</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://lodev.org/cgtutor/images/raycasteruntextured.gif" alt="Untextured walls">
+                <div class="gallery-overlay">
+                    <h3>Prototype Phase</h3>
+                    <p>Early development with basic wall rendering</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Controls -->
+    <section class="features">
+        <h2 class="section-title">🎮 Game Controls</h2>
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+                <h3>Movement</h3>
+                <p style="line-height: 2;">
+                    <strong style="color: var(--primary-color);">W</strong> - Move Forward<br>
+                    <strong style="color: var(--primary-color);">S</strong> - Move Backward<br>
+                    <strong style="color: var(--primary-color);">A</strong> - Strafe Left<br>
+                    <strong style="color: var(--primary-color);">D</strong> - Strafe Right
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Camera</h3>
+                <p style="line-height: 2;">
+                    <strong style="color: var(--primary-color);">← →</strong> - Rotate Camera<br>
+                    <strong style="color: var(--primary-color);">M</strong> - Toggle Mode<br>
+                    <strong style="color: var(--primary-color);">H</strong> - Help Screen<br>
+                    <strong style="color: var(--primary-color);">ESC</strong> - Quit
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Editor</h3>
+                <p style="line-height: 2;">
+                    <strong style="color: var(--primary-color);">Left Click</strong> - Place Wall<br>
+                    <strong style="color: var(--primary-color);">Right Click</strong> - Remove Wall<br>
+                    <strong style="color: var(--primary-color);">F5</strong> - Save Map<br>
+                    <strong style="color: var(--primary-color);">F9</strong> - Load Map
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Technical Specs -->
+    <section class="features">
+        <h2 class="section-title"> Technical Specs</h2>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Play Mode</th>
+                        <th>Edit Mode</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>3D Rendering</strong></td>
+                        <td style="color: var(--primary-color);">✅ Active</td>
+                        <td style="color: var(--gray-text);">❌ Disabled</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2D Map View</strong></td>
+                        <td style="color: var(--accent-color);">📊 Minimap</td>
+                        <td style="color: var(--primary-color);">✅ Full View</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Player Movement</strong></td>
+                        <td style="color: var(--primary-color);">✅ WASD + Arrows</td>
+                        <td style="color: var(--gray-text);">❌ Disabled</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Wall Editing</strong></td>
+                        <td style="color: var(--gray-text);">❌ Disabled</td>
+                        <td style="color: var(--primary-color);">✅ Mouse Click</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Collision Detection</strong></td>
+                        <td style="color: var(--primary-color);">✅ Active</td>
+                        <td style="color: var(--gray-text);">N/A</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Download CTA -->
+    <section class="features">
+        <div style="text-align: center; padding: 3rem 1rem; background: var(--card-bg); border-radius: 10px; border: 2px solid var(--border-glow);">
+            <h2 style="color: var(--primary-color); margin-bottom: 1rem;">Ready to Try It?</h2>
+            <p style="font-size: 1.2rem; color: var(--gray-text); margin-bottom: 2rem;">
+                Download the source code and create your own retro 3D worlds!
+            </p>
+            <a href="https://github.com/AmirHosseinRezaaie/My-Raycaster-Launch" class="cta-button" target="_blank">
+                 Get Source Code
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>Developer:</strong> AmirHossein Rezaaie | <strong>Student ID:</strong> 403541474</p>
+        <p>© 2026 RayCaster Pro | Licensed under <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a></p>
+        <p>Built for Computer Workshop Course - Iran University of Science and Technology</p>
+        <div class="container">
+            <p>Contact us:</p>
+            <div class="social-links">
+                <a href="https://t.me/amirhossein122333" target="_blank" class="telegram">
+                    <img src="images/Telegram-Logo.png" alt="telegram">
+                </a>
+                <a href="https://wa.me/qr/DXZSKFSOLGCMH1" target="_blank" class="whatsapp">
+                    <img src="images/Whats-App-Logo.png" alt="whatsapp">
+                </a>
+                <a href="https://eitaa.com/amirhossein122333" target="_blank" class="eitaa">
+                    <img src="images/Eitaa-Logo.png" alt="eitaa">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
